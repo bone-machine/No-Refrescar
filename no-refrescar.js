@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            No Refrescar!
 // @description     Desactiva el refresco automático en sitios de noticias argentinos (Diarios, Revistas, Deportes)
-// @namespace       http://tampermonkey.net/
+// @namespace       https://github.com/bone-machine/No-Refrescar
 // @version         0.1
 // @author          bone-machine
 // @license         GPLv3
