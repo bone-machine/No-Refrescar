@@ -2,12 +2,13 @@
 // @name            No Refrescar!
 // @description     Desactiva el refresco automático en sitios de noticias argentinos (Diarios, Revistas, Deportes)
 // @namespace       https://github.com/bone-machine/No-Refrescar
-// @version         0.5
+// @version         0.6
 // @author          bone-machine
 // @homepage        https://github.com/bone-machine/No-Refrescar
 // @supportURL      https://github.com/bone-machine/No-Refrescar/issues
 // @downloadURL     https://update.greasyfork.org/scripts/547376/No%20Refrescar%21.user.js
 // @updateURL       https://update.greasyfork.org/scripts/547376/No%20Refrescar%21.meta.js
+// @icon            https://i.ibb.co/SDLYynr6/no-refrescar-icon.png
 // @license         GPLv3
 // @grant           none
 // @run-at          document-start
