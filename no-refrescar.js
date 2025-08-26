@@ -79,7 +79,7 @@
         { domain: "ciudad.com.ar", timer: TimerType.TIMEOUT }
     ];
 
-    function clearTimerFunction (type) {
+    function clearTimer (type) {
         const originalTimer = window[`set${type}`];
         window[`set${type}`] = function(fn, delay, ...args) {
             if (
@@ -98,7 +98,7 @@
 
     for (const { domain, timer } of typeOfTimerPerDomain) {
         if (location.hostname.includes(domain)) {
-            clearTimerFunction(timer);
+            clearTimer(timer);
             break;
         }
     }
