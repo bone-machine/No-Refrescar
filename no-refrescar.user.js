@@ -6,8 +6,8 @@
 // @author          bone-machine
 // @homepage        https://github.com/bone-machine/No-Refrescar
 // @supportURL      https://github.com/bone-machine/No-Refrescar/issues
-// @downloadURL     https://github.com/bone-machine/No-Refrescar/raw/refs/heads/main/no-refrescar.user.js
-// @updateURL       https://github.com/bone-machine/No-Refrescar/raw/refs/heads/main/no-refrescar.user.js
+// @downloadURL     https://github.com/bone-machine/No-Refrescar/raw/main/no-refrescar.user.js
+// @updateURL       https://github.com/bone-machine/No-Refrescar/raw/main/no-refrescar.user.js
 // @license         GPLv3
 // @grant           none
 // @run-at          document-start
