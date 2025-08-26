@@ -33,6 +33,8 @@
 // @match           https://*.viapais.com.ar/*
 // @match           https://*.caras.perfil.com/*
 // @match           https://*.airedesantafe.com.ar/*
+// @match           https://*.cadena3.com/*
+
 // ==/UserScript==
 
 (function () {
@@ -70,6 +72,7 @@
         { domain: "ellitoral.com", timer: TimerType.INTERVAL },
         { domain: "la100.cienradios.com", timer: TimerType.INTERVAL },
         { domain: "ole.com.ar", timer: TimerType.INTERVAL },
+        { domain: "cadena3.com", timer: TimerType.INTERVAL },
         // setTimeout
         { domain: "lanacion.com.ar", timer: TimerType.TIMEOUT },
         { domain: "eldia.com", timer: TimerType.TIMEOUT },
@@ -86,7 +89,8 @@
                 fn.toString().includes("location.reload") ||
                 fn.toString().includes("window.reloadPage") || // Página 12.
                 fn.toString().includes('typeof google&&"object"===_typeof(google.ima)') || // El Litoral.
-                fn.toString().includes("typeof window.playing !== 'undefined' && Object.keys(window.playing).length)") // La 100.
+                fn.toString().includes("typeof window.playing !== 'undefined' && Object.keys(window.playing).length)") || // La 100.
+                fn.toString().includes("funcPage,600000") // Cadena 3
             ) {
                 const id = originalTimer(fn, delay, ...args);
                 window[`clear${type}`](id);
