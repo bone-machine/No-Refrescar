@@ -2,7 +2,7 @@
 // @name            No Refrescar!
 // @description     Desactiva el refresco automático en sitios de noticias argentinos (Diarios, Revistas, Deportes)
 // @namespace       https://github.com/bone-machine/No-Refrescar
-// @version         0.3
+// @version         0.4
 // @author          bone-machine
 // @homepage        https://github.com/bone-machine/No-Refrescar
 // @supportURL      https://github.com/bone-machine/No-Refrescar/issues
@@ -38,7 +38,6 @@
 // @match           https://*.caras.perfil.com/*
 // @match           https://*.airedesantafe.com.ar/*
 // @match           https://*.cadena3.com/*
-
 // ==/UserScript==
 
 (function () {
