@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name            No Refrescar!
-// @description     Desactiva el refresco automático en sitios de noticias argentinos (Diarios, Revistas, Deportes)
+// @description     Desactiva el refresco automático en sitios de noticias argentinas (políticas, sociales, culturales, económicas, deportivas, etc.)
 // @namespace       https://github.com/bone-machine/No-Refrescar
-// @version         0.6
+// @version         0.7
 // @author          bone-machine
 // @homepage        https://github.com/bone-machine/No-Refrescar
 // @supportURL      https://github.com/bone-machine/No-Refrescar/issues
@@ -41,10 +41,22 @@
 // @match           https://*.cadena3.com/*
 // ==/UserScript==
 
+/*
+
+Si querés reportar un comportamiento indeseado, un bug, o el script no funciona en los sitios que visitas, abrí un ticket en:
+https://github.com/bone-machine/No-Refrescar/issues
+
+Para peticiones, sólo se aceptan medios de comunicación de cualquier tipo de noticias
+(políticas, sociales, culturales, económicas, deportivas, sucesos, farándula, etc.)
+
+Se aceptan sugerencias para otros sitios que no sean de origen argentino.
+
+*/
+
 (function () {
     "use strict";
 
-    /* Remove Meta HTML "refresh" tag for every site listed in each @match above, even if they don't specifically declare/use it. */
+    /* Remove Meta HTML "refresh" tag for every site listed in each @match above, even if they don't specifically declare/use it */
 
     // Credits to @gorhill and the uBlock Origin team:
     // https://github.com/gorhill/uBlock/wiki/Resources-Library#prevent-refreshjs-
@@ -63,7 +75,7 @@
         defuse();
     }
 
-    /* Clear setInterval, or setTimeout, for sites which don't use a Meta HTML "refresh" tag for refreshing. */
+    /* Clear setInterval, or setTimeout, for sites which don't use a Meta HTML "refresh" tag for refreshing */
 
     const TimerType = {
         INTERVAL: "Interval",
@@ -94,7 +106,7 @@
                 fn.toString().includes("window.reloadPage") || // Página 12.
                 fn.toString().includes('typeof google&&"object"===_typeof(google.ima)') || // El Litoral.
                 fn.toString().includes("typeof window.playing !== 'undefined' && Object.keys(window.playing).length)") || // La 100.
-                fn.toString().includes("funcPage,600000") // Cadena 3
+                fn.toString().includes("funcPage,600000") // Cadena 3.
             ) {
                 const id = originalTimer(fn, delay, ...args);
                 window[`clear${type}`](id);
@@ -111,7 +123,7 @@
         }
     }
 
-    /* Specific fixes for certain domains. */
+    /* Specific fixes for certain domains */
 
     // For Clarín and Olé, we intercept their Web Worker. Olé needs both this method plus clearing their interval above.
     if (location.hostname.includes("clarin.com") || location.hostname.includes("ole.com.ar")) {
@@ -135,7 +147,7 @@
                     return originalPostMessage.call(this, modifiedData);
                 }
 
-                // Allow all other messages
+                // Allow all other messages.
                 return originalPostMessage.call(this, data);
             };
 
