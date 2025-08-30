@@ -2,7 +2,7 @@
 // @name            No Refrescar!
 // @description     Desactiva el refresco automático en sitios de noticias argentinas (políticas, sociales, culturales, económicas, deportivas, etc.)
 // @namespace       https://github.com/bone-machine/No-Refrescar
-// @version         0.7
+// @version         1.0
 // @author          bone-machine
 // @homepage        https://github.com/bone-machine/No-Refrescar
 // @supportURL      https://github.com/bone-machine/No-Refrescar/issues
@@ -27,7 +27,7 @@
 // @match           https://*.eldia.com/*
 // @match           https://*.revistagente.com/*
 // @match           https://*.ciudad.com.ar/*
-// @match           https://*.la100.cienradios.com/*
+// @match           https://*.cienradios.com/*
 // @match           https://*.tiempoar.com.ar/*
 // @match           https://*.diariopopular.com.ar/*
 // @match           https://*.losandes.com.ar/*
@@ -39,6 +39,8 @@
 // @match           https://*.caras.perfil.com/*
 // @match           https://*.airedesantafe.com.ar/*
 // @match           https://*.cadena3.com/*
+// @match           https://*.infocielo.com/*
+// @match           https://*.mdzol.com/*
 // ==/UserScript==
 
 /*
@@ -86,7 +88,7 @@ Se aceptan sugerencias para otros sitios que no sean de origen argentino.
         // setInterval
         { domain: "pagina12.com.ar", timer: TimerType.INTERVAL },
         { domain: "ellitoral.com", timer: TimerType.INTERVAL },
-        { domain: "la100.cienradios.com", timer: TimerType.INTERVAL },
+        { domain: "cienradios.com", timer: TimerType.INTERVAL }, // La 100, Radio Mitre.
         { domain: "ole.com.ar", timer: TimerType.INTERVAL },
         { domain: "cadena3.com", timer: TimerType.INTERVAL },
         // setTimeout
@@ -105,7 +107,7 @@ Se aceptan sugerencias para otros sitios que no sean de origen argentino.
                 fn.toString().includes("location.reload") ||
                 fn.toString().includes("window.reloadPage") || // Página 12.
                 fn.toString().includes('typeof google&&"object"===_typeof(google.ima)') || // El Litoral.
-                fn.toString().includes("typeof window.playing !== 'undefined' && Object.keys(window.playing).length)") || // La 100.
+                fn.toString().includes("typeof window.playing !== 'undefined' && Object.keys(window.playing).length)") || // La 100, Radio Mitre.
                 fn.toString().includes("funcPage,600000") // Cadena 3.
             ) {
                 const id = originalTimer(fn, delay, ...args);
