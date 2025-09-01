@@ -2,7 +2,7 @@
 // @name            No Refrescar!
 // @description     Desactiva el refresco automático en sitios de noticias argentinas (políticas, sociales, culturales, económicas, deportivas, etc.)
 // @namespace       https://github.com/bone-machine/No-Refrescar
-// @version         1.0
+// @version         1.01
 // @author          bone-machine
 // @homepage        https://github.com/bone-machine/No-Refrescar
 // @supportURL      https://github.com/bone-machine/No-Refrescar/issues
@@ -41,6 +41,8 @@
 // @match           https://*.cadena3.com/*
 // @match           https://*.infocielo.com/*
 // @match           https://*.mdzol.com/*
+// @match           https://*.a24.com/*
+// @match           https://*.urgente24.com/*
 // ==/UserScript==
 
 /*
